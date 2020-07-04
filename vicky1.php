@@ -4,7 +4,7 @@ include "function.php";
 ulang:
 // function change(){
 echo color("blue","=============================================\n");
-echo color("green","V I C K Y \n");
+echo color("green","              V I C K Y \n");
 echo color("blue","=============================================\n");
 echo color("red","Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("green","VOUCHER GOJEK\n");
@@ -12,7 +12,7 @@ echo color("blue","=============================================\n");
 echo color("yellow","Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("red","Masukan Nomor  : ");
+        echo color("yellow","Masukan Nomor  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
