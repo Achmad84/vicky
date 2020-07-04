@@ -4,12 +4,12 @@ include "function.php";
 ulang:
 // function change(){
 echo color("blue","=============================================\n");
-echo color("green","              V I C K Y \n");
+echo color("green","                VICKY & Friends \n");
 echo color("blue","=============================================\n");
-echo color("red","Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
-echo color("green","VOUCHER GOJEK\n");
+echo color("red","       Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("green","               VOUCHER GOJEK\n");
 echo color("blue","=============================================\n");
-echo color("yellow","Format Kode 62*** \n");
+echo color("yellow","         Format No Telp : 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
         echo color("yellow","Masukan Nomor  : ");
@@ -51,7 +51,7 @@ echo color("yellow","Format Kode 62*** \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("green","\n            CLAIM VOUCHER        ");
+        echo color("green","Klaim Voucher Dimulai\n");
         reff:
         $data = '{"referral_code":"G-S64JWN3"}';    
         $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
@@ -180,7 +180,7 @@ echo color("yellow","Format Kode 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 111222 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         echo color("white"," PIN Gopay anda : 111222")."\n";
          $data2 = '{"pin":"111222"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
