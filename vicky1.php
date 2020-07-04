@@ -46,7 +46,7 @@ echo color("yellow","Format Kode 62*** \n");
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
         if(strpos($verif, '"access_token"')){
-        echo color("white","PENDAFTARAN NOMOR BERHASIL\n");
+        echo color("white","Pendaftaran Nomor Berhasil\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
@@ -56,7 +56,7 @@ echo color("yellow","Format Kode 62*** \n");
         $data = '{"referral_code":"G-S64JWN3"}';    
         $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
         $message = fetch_value($claim,'"message":"','"');
-        if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
+        if(strpos($claim, 'Promo kamu sudah masuk')){
         echo "\n".color("green","+] Message: ".$message);
 	}
 	echo "\n".color("green","Voucher ke 1");
@@ -67,7 +67,7 @@ echo color("yellow","Format Kode 62*** \n");
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
-        if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
+        if(strpos($code1, 'Promo kamu sudah masuk')){
         echo "\n".color("green","Message: ".$message);
         goto gocar;
         }else{
@@ -81,7 +81,7 @@ echo color("yellow","Format Kode 62*** \n");
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
-        if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
+        if(strpos($code1, 'Promo kamu sudah masuk')){
         echo "\n".color("green","Message: ".$message);
         goto gofood;
         }else{
@@ -176,7 +176,7 @@ echo color("yellow","Format Kode 62*** \n");
                                         $debug['text'] = $pesan;
                                         $debug['respon'] = json_decode($datas, true);
          setpin:
-         echo "\n".color("white","SETPIN..!!!: y/n ");
+         echo "\n".color("white","Set PIN Gopay..???: y/n ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
