@@ -4,7 +4,7 @@ include "function.php";
 ulang:
 // function change(){
 echo color("blue","===============================================\n");
-echo color("green","=     <blink>          VICKY & Friends   </blink>            =\n");
+echo color("green","=               VICKY & Friends               =\n");
 echo color("blue","===============================================\n");
 echo color("red","=       Time  : ".date('[d-m-Y] [H:i:s]')."       =\n");
 echo color("green","=                VOUCHER GOJEK                =\n");
@@ -180,7 +180,9 @@ echo color("yellow","Format No Telp : 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("white"," PIN Gopay anda : 111222")."\n";
+         echo color("yellow","Terimakasih telah menggunakan Script ini,, Vic&Friends");
+	 echo color("blue","===============================================\n");
+	 echo color("white","PIN Gopay anda : 111222")."\n";
          $data2 = '{"pin":"111222"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
