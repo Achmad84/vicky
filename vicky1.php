@@ -197,15 +197,15 @@ echo color("yellow","Format No Telp : 62*** \n");
          }
          }
          }else{
-         echo color("white","-] OTP SALAH");
+         echo color("white","-] OTP salah !!!");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("white","!] INPUT ULANG..\n");
+         echo color("white","!] Masukan OTP kembali\n");
          goto otp;
          }
          }else{
-         echo color("white","-] NOMOR SALAH");
+         echo color("white","Nomor Salah atau telah Terdaftar");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("white","!] MASUKAN LAGI\n");
+         echo color("white","Mohon periksa dan Masukan nomor kembali\n");
          goto ulang;
          }
 //  }
