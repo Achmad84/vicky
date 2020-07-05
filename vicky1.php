@@ -4,7 +4,7 @@ include "function.php";
 ulang:
 // function change(){
 echo color("blue","===============================================\n");
-echo color("green","=               VICKY & Friends               =\n");
+echo color("green","=     <blink>          VICKY & Friends   </blink>            =\n");
 echo color("blue","===============================================\n");
 echo color("red","=       Time  : ".date('[d-m-Y] [H:i:s]')."       =\n");
 echo color("green","=                VOUCHER GOJEK                =\n");
