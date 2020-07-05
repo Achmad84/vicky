@@ -49,7 +49,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         echo color("yellow","Pendaftaran Nomor Berhasil\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
-        echo color("white","Token Akses : ".$token."\n\n");
+        echo color("white","Token : ".$token."\n\n");
         save("token.txt",$token); 
         echo color("green","Memulai Klaim Voucher \n");
         reff:
