@@ -3,12 +3,12 @@ date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
 // function change(){
-echo color("blue","=============================================\n");
-echo color("green","=              VICKY & Friends              =\n");
-echo color("blue","=============================================\n");
-echo color("red","=      Time  : ".date('[d-m-Y] [H:i:s]')."      =\n");
-echo color("green","=               VOUCHER GOJEK               =\n");
-echo color("blue","=============================================\n");
+echo color("blue","===============================================\n");
+echo color("green","=               VICKY & Friends               =\n");
+echo color("blue","===============================================\n");
+echo color("red","=       Time  : ".date('[d-m-Y] [H:i:s]')."       =\n");
+echo color("green","=                VOUCHER GOJEK                =\n");
+echo color("blue","===============================================\n");
 echo color("yellow","Format No Telp : 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
@@ -39,19 +39,19 @@ echo color("yellow","Format No Telp : 62*** \n");
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("white"," Masukan Kode OTP ")."\n";
+        echo color("green","Masukan Kode OTP ")."\n";
         otp:
-        echo color("green"," OTP : ");
+        echo color("green","OTP       : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
         if(strpos($verif, '"access_token"')){
-        echo color("white","Pendaftaran Nomor Berhasil\n");
+        echo color("yellow","Pendaftaran Nomor Berhasil\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
-        echo color("white","+] Your access token : ".$token."\n\n");
+        echo color("white","+] Token Akses : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("green","Klaim Voucher Dimulai\n");
+        echo color("green","Memulai Klaim Voucher \n");
         reff:
         $data = '{"referral_code":"G-S64JWN3"}';    
         $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
@@ -59,8 +59,8 @@ echo color("yellow","Format No Telp : 62*** \n");
         if(strpos($claim, 'Promo kamu sudah masuk')){
         echo "\n".color("green","+] Message: ".$message);
 	}
-	echo "\n".color("green","Voucher ke 1");
-        echo "\n".color("white"," Please wait");
+	echo "\n".color("green","Klaim Voucher ke 1");
+        echo "\n".color("white","Mohon menunggu..");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(5);
@@ -73,8 +73,8 @@ echo color("yellow","Format No Telp : 62*** \n");
         }else{
         echo "\n".color("white"," Message: ".$message);
 	gocar:
-        echo "\n".color("green"," Voucher ke 2 ");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("green","Klaim Voucher ke 2 ");
+        echo "\n".color("white","Mohon menunggu..");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(35);
@@ -87,8 +87,8 @@ echo color("yellow","Format No Telp : 62*** \n");
         }else{
         echo "\n".color("white"," Message: ".$message);
         gofood:
-        echo "\n".color("green"," Voucher ke 3");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("green","Klaim Voucher ke 3");
+        echo "\n".color("white","Mohon menunggu..");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(3);
@@ -96,8 +96,8 @@ echo color("yellow","Format No Telp : 62*** \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
-        echo "\n".color("green"," Voucher ke 4");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("green","Klaim Voucher ke 4");
+        echo "\n".color("white","Mohon menunggu..");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(3);
