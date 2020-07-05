@@ -41,7 +41,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         $otptoken = getStr('"otp_token":"','"',$register);
         echo color("green","Masukan Kode OTP ")."\n";
         otp:
-        echo color("green","OTP       : ");
+        echo color("green","OTP            : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
