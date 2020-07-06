@@ -6,8 +6,8 @@ ulang:
 echo color("blue","===============================================\n");
 echo color("green","=               VICKY & Friends               =\n");
 echo color("blue","===============================================\n");
-echo color("red","=       Time  : ".date('[d-m-Y] [H:i:s]')."       =\n");
 echo color("green","=                VOUCHER GOJEK                =\n");
+echo color("red","=       Time  : ".date('[d-m-Y] [H:i:s]')."       =\n");
 echo color("blue","===============================================\n");
 echo color("yellow","Format No Telp : 62*** \n");
         $nama = nama();
