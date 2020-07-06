@@ -71,7 +71,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         echo "\n".color("green","Message: ".$message);
         goto gocar;
         }else{
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("white","Message: ".$message);
 	gocar:
         echo "\n".color("green","Klaim Voucher ke 2 ");
         echo "\n".color("white","Mohon menunggu..");
@@ -85,7 +85,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         echo "\n".color("green","Message: ".$message);
         goto gofood;
         }else{
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("white","Message: ".$message);
         gofood:
         echo "\n".color("green","Klaim Voucher ke 3");
         echo "\n".color("white","Mohon menunggu..");
@@ -95,7 +95,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
-        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("white","Message: ".$message);
         echo "\n".color("green","Klaim Voucher ke 4");
         echo "\n".color("white","Mohon menunggu..");
         for($a=1;$a<=3;$a++){
@@ -105,7 +105,7 @@ echo color("yellow","Format No Telp : 62*** \n");
         sleep(3);
         $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
-        echo "\n".color("yellow"," Message: ".$messageboba09);
+        echo "\n".color("white","Message: ".$messageboba09);
         sleep(1);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
@@ -180,7 +180,7 @@ echo color("yellow","Format No Telp : 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("yellow","Terimakasih telah menggunakan Script ini,, Vic&Friends");
+         echo color("yellow","Terimakasih telah menggunakan Script ini,, Vic&Friends\n");
 	 echo color("blue","===============================================\n");
 	 echo color("white","PIN Gopay anda : 111222")."\n";
          $data2 = '{"pin":"111222"}';
