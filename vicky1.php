@@ -180,7 +180,7 @@ echo color("yellow","Format No Telp : 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("yellow","Terimakasih telah menggunakan Script ini,, Vic&Friends\n");
+         echo color("yellow","Terimakasih telah menggunakan Script ini\n");
 	 echo color("blue","===============================================\n");
 	 echo color("white","PIN Gopay anda : 111222")."\n";
          $data2 = '{"pin":"111222"}';
